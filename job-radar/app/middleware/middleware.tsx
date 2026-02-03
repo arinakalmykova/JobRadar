@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 export function middleware(request: NextRequest) {
   const token = request.cookies.get("token")?.value;
 
-  const protectedPaths = ["/auth/page"];
+  const protectedPaths = ["/page"];
   const path = request.nextUrl.pathname;
 
   if (!token && protectedPaths.includes(path)) {
@@ -12,6 +12,6 @@ export function middleware(request: NextRequest) {
   }
 
   if (token && (path === "/auth/login" || path === "/auth/register")) {
-    return NextResponse.redirect(new URL("/", request.url));
+    return NextResponse.redirect(new URL("/page", request.url));
   }
 }

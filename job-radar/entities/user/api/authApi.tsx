@@ -6,11 +6,17 @@ export const loginUser = async (
   password: string,
 ): Promise<{ token: string; user: User }> => {
   const response = await fetch(`${API_URL}/login`, {
+    method:"POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
   });
+  
+  if (!response.ok) {
+    throw new Error(`Ошибка: ${response.status}`);
+  }
+
   return response.json();
 };
 
@@ -20,10 +26,16 @@ export const registerUser = async (
   password: string,
 ): Promise<{ token: string; user: User }> => {
   const response = await fetch(`${API_URL}/register`, {
+    method:"POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, email, password }),
   });
+
+  if (!response.ok) {
+    throw new Error(`Ошибка: ${response.status}`);
+  }
+
   return response.json();
 };
