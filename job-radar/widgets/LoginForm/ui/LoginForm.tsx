@@ -16,8 +16,10 @@ export function LoginForm() {
     }
 
     return (
-    <form onSubmit ={onSubmit} className="flex flex-col gap-5">
+    <form onSubmit ={onSubmit} className="flex flex-col justify-center gap-5">
         <Input
+        id="email"
+        isAuth ={true}
         label="Email"
         type="email"
         placeholder="example@mail.com"
@@ -26,6 +28,8 @@ export function LoginForm() {
       />
 
       <Input
+        id="password"
+        isAuth ={true}
         label="Пароль"
         type="password"
         placeholder="••••••••"
@@ -33,7 +37,7 @@ export function LoginForm() {
         onChange={(e) => setPassword(e.target.value)}
       />
         <Button type="submit" isLoading={loading}>Вход</Button>
-        {error && <p>{error}</p>}
+        {error && <p className="text-center">{error}</p>}
 
         <p className="text-sm text-center text-gray-600 mt-2">
         Нет аккаунта?{' '}

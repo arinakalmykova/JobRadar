@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Node.js Developer",
+    "company": "TechCorp",
+    "location": "Remote",
+    "type": "Full-time",
+    "salary": "100000"
+  },
+  {
+    "id": 2,
+    "title": "Frontend Developer",
+    "company": "WebSolutions",
+    "location": "Moscow",
+    "type": "Part-time",
+    "salary": "70000"
+  }
+]

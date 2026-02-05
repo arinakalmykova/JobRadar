@@ -2,7 +2,7 @@
 import { ReactNode } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-
+import {Header,Footer} from "@/widgets";
 interface Props {
   children: ReactNode;
 }
@@ -18,7 +18,14 @@ export default async function ProtectedLayout({ children }: Props) {
   }
 
   console.log("Token cookie:", cookieStore.get("token"));
-console.log("User cookie:", cookieStore.get("user"));
+  console.log("User cookie:", cookieStore.get("user"));
 
-  return <>{children}</>;
+  return (
+    <>
+      <Header/>
+      <main>{children}</main>
+      <Footer/>
+      </>
+    
+  );
 }

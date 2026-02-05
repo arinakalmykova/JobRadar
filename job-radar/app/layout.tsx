@@ -1,13 +1,9 @@
-import { Montserrat } from "next/font/google";
+
 import "./globals.css";
 import { ReduxProvider } from "@/app";
 import {AuthInit} from "@/app";
+import { ThemeProvider } from "next-themes";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["cyrillic"],
-  weight: ["400", "700"],
-});
 
 export default function RootLayout({
   children,
@@ -17,8 +13,19 @@ export default function RootLayout({
 
   return (
     <html lang="ru">
-      <body className={`${montserrat.variable} antialiased`}>
-        <ReduxProvider><AuthInit/>{children}</ReduxProvider>
+      <head>
+        {/* Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <ReduxProvider><AuthInit/>{children}</ReduxProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

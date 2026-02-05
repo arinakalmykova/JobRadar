@@ -17,6 +17,8 @@ export function RegisterForm() {
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-5">
          <Input
+         id="name"
+         isAuth ={true}
         label="Имя"
         type="text"
         placeholder="Иван"
@@ -24,6 +26,8 @@ export function RegisterForm() {
         onChange={(e) => setName(e.target.value)}
       />
        <Input
+       id="email"
+       isAuth ={true}
         label="Email"
         type="email"
         placeholder="example@mail.com"
@@ -32,6 +36,8 @@ export function RegisterForm() {
       />
 
       <Input
+      id="password"
+      isAuth ={true}
         label="Пароль"
         type="password"
         placeholder="••••••••"
