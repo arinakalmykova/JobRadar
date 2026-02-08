@@ -1,18 +1,98 @@
 [
   {
     "id": 1,
-    "title": "Node.js Developer",
-    "company": "TechCorp",
-    "location": "Remote",
-    "type": "Full-time",
-    "salary": "100000"
+    "title": "Frontend-разработчик",
+    "company": "WebSolutions",
+    "location": "Москва",
+    "type": "Полная занятость",
+    "salary": "120000"
   },
   {
     "id": 2,
-    "title": "Frontend Developer",
-    "company": "WebSolutions",
-    "location": "Moscow",
-    "type": "Part-time",
+    "title": "Backend-разработчик (Node.js)",
+    "company": "TechCorp",
+    "location": "Удалённо",
+    "type": "Полная занятость",
+    "salary": "150000"
+  },
+  {
+    "id": 3,
+    "title": "Fullstack-разработчик",
+    "company": "Digital Studio",
+    "location": "Санкт-Петербург",
+    "type": "Удалённая работа",
+    "salary": "160000"
+  },
+  {
+    "id": 4,
+    "title": "Web-разработчик (Junior)",
+    "company": "StartupLab",
+    "location": "Казань",
+    "type": "Стажировка",
+    "salary": "60000"
+  },
+  {
+    "id": 5,
+    "title": "UX/UI дизайнер",
+    "company": "Creative Agency",
+    "location": "Удалённо",
+    "type": "Проектная работа",
+    "salary": "90000"
+  },
+  {
+    "id": 6,
+    "title": "Графический дизайнер",
+    "company": "BrandHouse",
+    "location": "Москва",
+    "type": "Частичная занятость",
     "salary": "70000"
+  },
+  {
+    "id": 7,
+    "title": "PHP-разработчик",
+    "company": "IT Solutions",
+    "location": "Новосибирск",
+    "type": "Полная занятость",
+    "salary": "130000"
+  },
+  {
+    "id": 8,
+    "title": "JavaScript-разработчик",
+    "company": "CodeFactory",
+    "location": "Удалённо",
+    "type": "Фриланс",
+    "salary": "110000"
+  },
+  {
+    "id": 9,
+    "title": "Верстальщик HTML/CSS",
+    "company": "MediaGroup",
+    "location": "Екатеринбург",
+    "type": "Частичная занятость",
+    "salary": "80000"
+  },
+  {
+    "id": 10,
+    "title": "Web-дизайнер",
+    "company": "Design Pro",
+    "location": "Удалённо",
+    "type": "Проектная работа",
+    "salary": "95000"
+  },
+  {
+    "id": 11,
+    "title": "QA-инженер (тестировщик)",
+    "company": "SoftLine",
+    "location": "Москва",
+    "type": "Полная занятость",
+    "salary": "100000"
+  },
+  {
+    "id": 12,
+    "title": "DevOps-инженер",
+    "company": "CloudTech",
+    "location": "Удалённо",
+    "type": "Полная занятость",
+    "salary": "180000"
   }
 ]

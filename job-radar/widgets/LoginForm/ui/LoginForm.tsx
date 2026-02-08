@@ -1,25 +1,24 @@
-"use client"
-import {useState,useEffect} from "react";
-import {useAuth} from "@/features";
-import { useAppSelector } from "@/app";
-import {Input, Button} from "@/shared";
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
+import { useAuth } from "@/features";
+import { Input, Button } from "@/shared";
+import Link from "next/link";
 
 export function LoginForm() {
-    const [email,setEmail] = useState("");
-    const [password,setPassword] = useState("");
-    const { handleLogin,loading,error} = useAuth();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { handleLogin, loading, error } = useAuth();
 
-    const onSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        handleLogin(email,password);
-    }
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleLogin(email, password);
+  };
 
-    return (
-    <form onSubmit ={onSubmit} className="flex flex-col justify-center gap-5">
-        <Input
+  return (
+    <form onSubmit={onSubmit} className="flex flex-col justify-center gap-5">
+      <Input
         id="email"
-        isAuth ={true}
+        isType={"auth"}
         label="Email"
         type="email"
         placeholder="example@mail.com"
@@ -29,25 +28,24 @@ export function LoginForm() {
 
       <Input
         id="password"
-        isAuth ={true}
+        isType={"auth"}
         label="Пароль"
         type="password"
         placeholder="••••••••"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-        <Button type="submit" isLoading={loading}>Вход</Button>
-        {error && <p className="text-center">{error}</p>}
+      <Button isType={"standart"} type="submit" isLoading={loading}>
+        Вход
+      </Button>
+      {error && <p className="text-center">{error}</p>}
 
-        <p className="text-sm text-center text-gray-600 mt-2">
-        Нет аккаунта?{' '}
-        <Link
-          href="/auth/register"
-          className="text-violet-600 hover:underline"
-        >
+      <p className="text-sm text-center text-gray-600 mt-2">
+        Нет аккаунта?{" "}
+        <Link href="/auth/register" className="text-violet-600 hover:underline">
           Зарегистрируйтесь
         </Link>
-        </p>  
+      </p>
     </form>
-    )
+  );
 }

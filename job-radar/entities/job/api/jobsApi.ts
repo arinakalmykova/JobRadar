@@ -4,17 +4,15 @@ import { Job } from "@/entities";
 export const fetchJobs = async (
   search?: string,
   location?: string,
-  type?:string
+  type?: string,
 ): Promise<Job[]> => {
-   const params = new URLSearchParams();
+  const params = new URLSearchParams();
 
   if (search) params.append("search", search);
   if (location) params.append("location", location);
   if (type) params.append("type", type);
 
-  const response = await fetch(
-    `${JOBS_API_URL}?${params.toString()}`
-  );
+  const response = await fetch(`${JOBS_API_URL}?${params.toString()}`);
 
   if (!response.ok) {
     throw new Error(`Ошибка: ${response.status}`);
@@ -22,5 +20,3 @@ export const fetchJobs = async (
 
   return response.json();
 };
-
-

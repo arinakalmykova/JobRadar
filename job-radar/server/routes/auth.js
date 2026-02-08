@@ -1,7 +1,7 @@
 const { Router } = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const {saveUsers, getUsers} = require("../data/file");
+const { saveUsers, getUsers } = require("../data/file");
 
 const router = Router();
 const SECRET_KEY = "supersecretkey123";
@@ -14,8 +14,8 @@ router.post("/register", async (req, res) => {
     return res.status(400).json({ message: "Все поля обязательны" });
   }
   const users = getUsers();
-  
-  const existingUser = users.find(u => u.email === email);
+
+  const existingUser = users.find((u) => u.email === email);
   if (existingUser) {
     return res.status(400).json({ message: "Пользователь уже существует" });
   }
@@ -25,7 +25,7 @@ router.post("/register", async (req, res) => {
     id: users.length + 1,
     name,
     email,
-    password: hashedPassword
+    password: hashedPassword,
   };
 
   users.push(newUser);
@@ -33,14 +33,17 @@ router.post("/register", async (req, res) => {
 
   const token = jwt.sign({ id: newUser.id }, SECRET_KEY, { expiresIn: "1h" });
 
-  res.json({ token, user: { id: newUser.id, name: newUser.name, email: newUser.email } });
+  res.json({
+    token,
+    user: { id: newUser.id, name: newUser.name, email: newUser.email },
+  });
 });
 
 // Вход
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const users = getUsers();
-  const user = users.find(u => u.email === email);
+  const user = users.find((u) => u.email === email);
   if (!user) {
     return res.status(400).json({ message: "Пользователь не найден" });
   }
@@ -52,7 +55,15 @@ router.post("/login", async (req, res) => {
 
   const token = jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: "1h" });
 
-  res.json({ token, user: { id: user.id, name: user.name, email: user.email } });
+  res.json({
+    token,
+    user: {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      avatar: user.avatar,
+    },
+  });
 });
 
 module.exports = router;

@@ -28,7 +28,10 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "**/*.mts"
-, "server/routes/auth.ts", "server/index.js", "server/data/users.js"  ],
+    "**/*.mts",
+    "server/routes/auth.ts",
+    "server/index.js",
+    "server/data/users.js"
+  ],
   "exclude": ["node_modules"]
 }

@@ -3,6 +3,19 @@
     "id": 1,
     "name": "Arina",
     "email": "ari@gmail.com",
-    "password": "$2b$10$te8fF11Z0llje/kDngO0..OINdNf.K94PjvQCnbJ/YRi7DfndQ7lG"
+    "password": "$2b$10$te8fF11Z0llje/kDngO0..OINdNf.K94PjvQCnbJ/YRi7DfndQ7lG",
+    "avatar": "http://localhost:5001/uploads/avatars/avatar-1770566998889-142598008.jpg",
+    "resume": {
+      "fullName": "Arina",
+      "city": "Тула",
+      "age": "21",
+      "desiredSalary": "80000",
+      "desiredSpecialty": "Frontend-разработчик",
+      "skills": "React, Node.js, Express, JS, HTML, CSS",
+      "desiredJobType": "part-time",
+      "education": "Высшее",
+      "avatar": "http://localhost:5001/uploads/avatars/avatar-1770566998889-142598008.jpg"
+    },
+    "appliedJobs": []
   }
 ]

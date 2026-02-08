@@ -5,4 +5,4 @@ export type Job = {
   location: string;
   type: string;
   salary: string;
-}
+};

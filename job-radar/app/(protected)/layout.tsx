@@ -1,31 +1,24 @@
-
 import { ReactNode } from "react";
-import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import {Header,Footer} from "@/widgets";
+import { Header, Footer } from "@/widgets";
+import { getUser } from "@/shared";
+
 interface Props {
   children: ReactNode;
 }
 
 export default async function ProtectedLayout({ children }: Props) {
-  const cookieStore = await cookies();
-
-  const token = cookieStore.get("token")?.value ?? null;
-  const userRaw = cookieStore.get("user")?.value ?? null;
-  const user = userRaw ? JSON.parse(userRaw) : null;
+  const { token } = await getUser();
+  console.log(token);
   if (!token) {
     redirect("/auth/login");
   }
 
-  console.log("Token cookie:", cookieStore.get("token"));
-  console.log("User cookie:", cookieStore.get("user"));
-
   return (
     <>
-      <Header/>
-      <main>{children}</main>
-      <Footer/>
-      </>
-    
+      <Header />
+      <main className="flex-1">{children}</main>
+      <Footer />
+    </>
   );
 }
